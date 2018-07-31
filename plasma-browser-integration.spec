@@ -31,7 +31,7 @@ Better browser integration for the Plasma desktop
 
 %prep
 %autosetup
-%cmake_kde5
+%cmake_kde5 -DINSTALL_CHROME_MANIFEST=true
 
 %build
 %ninja -C build
