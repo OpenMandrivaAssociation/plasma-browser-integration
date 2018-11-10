@@ -5,7 +5,7 @@
 
 Name: plasma-browser-integration
 Version: 5.14.2
-Release: 2
+Release: 3
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Better browser integration for the Plasma desktop
 URL: http://kde.org/
@@ -31,7 +31,7 @@ Better browser integration for the Plasma desktop
 
 %prep
 %autosetup
-%cmake_kde5 -DINSTALL_CHROME_MANIFEST=true
+%cmake_kde5 -DINSTALL_CHROME_MANIFEST=ON  -DMOZILLA_DIR:PATH=%{_libdir}/mozilla
 
 %build
 %ninja -C build
@@ -44,7 +44,7 @@ Better browser integration for the Plasma desktop
 %{_sysconfdir}/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_sysconfdir}/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_bindir}/plasma-browser-integration-host
-%{_prefix}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
+%{_libdir}/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_libdir}/qt5/plugins/kf5/kded/browserintegrationreminder.so
 %{_libdir}/qt5/plugins/krunner_browsertabs.so
 %{_datadir}/kservices5/plasma-runner-browsertabs.desktop
