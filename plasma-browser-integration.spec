@@ -27,11 +27,11 @@ BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Widgets)
 
 %description
-Better browser integration for the Plasma desktop
+Better browser integration for the Plasma desktop.
 
 %prep
-%autosetup
-%cmake_kde5 -DINSTALL_CHROME_MANIFEST=ON  -DMOZILLA_DIR:PATH=%{_libdir}/mozilla
+%autosetup -p1
+%cmake_kde5 -DINSTALL_CHROME_MANIFEST=TRUE  -DMOZILLA_DIR:PATH=%{_libdir}/mozilla
 
 %build
 %ninja -C build
