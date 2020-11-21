@@ -4,7 +4,7 @@
 
 Name: plasma-browser-integration
 Version: 5.20.3
-Release: 5
+Release: 6
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Better browser integration for the Plasma desktop
 URL: http://kde.org/
