@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma-browser-integration
-Version: 5.20.5
+Version: 5.21.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Better browser integration for the Plasma desktop
@@ -45,9 +45,11 @@ Better browser integration for the Plasma desktop.
 %files -f %{name}.lang
 %{_sysconfdir}/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_sysconfdir}/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json
+%{_sysconfdir}/opt/edge/native-messaging-hosts/org.kde.plasma.browser_integration.json
+%{_datadir}/krunner/dbusplugins/plasma-runner-browserhistory.desktop
+%{_datadir}/krunner/dbusplugins/plasma-runner-browsertabs.desktop
 %{_bindir}/plasma-browser-integration-host
 %{_libdir}/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_libdir}/qt5/plugins/kf5/kded/browserintegrationreminder.so
-%{_libdir}/qt5/plugins/kf5/krunner/krunner_browsertabs.so
 %{_datadir}/chromium/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
 %{_datadir}/google-chrome/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
