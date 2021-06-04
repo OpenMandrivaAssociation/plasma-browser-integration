@@ -1,9 +1,8 @@
-%define debug_package %{nil}
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma-browser-integration
-Version: 5.21.5
+Version: 5.22.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Better browser integration for the Plasma desktop
@@ -54,3 +53,4 @@ Better browser integration for the Plasma desktop.
 %{_libdir}/qt5/plugins/kf5/kded/browserintegrationreminder.so
 %{_datadir}/chromium/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
 %{_datadir}/google-chrome/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
+%{_datadir}/applications/org.kde.plasma.browser_integration.host.desktop
