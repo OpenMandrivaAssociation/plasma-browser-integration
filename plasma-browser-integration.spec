@@ -26,7 +26,7 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(LibTaskManager)
+BuildRequires: cmake(LibTaskManager) < 5.27.50
 
 %description
 Better browser integration for the Plasma desktop.
