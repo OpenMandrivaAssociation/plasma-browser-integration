@@ -33,6 +33,7 @@ BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: cmake(LibTaskManager) >= 5.27.80
+BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 Better browser integration for the Plasma desktop.
