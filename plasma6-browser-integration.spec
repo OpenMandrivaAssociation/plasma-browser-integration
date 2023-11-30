@@ -3,8 +3,8 @@
 #define git 20231104
 
 Name: plasma6-browser-integration
-Version: 5.27.80
-Release: %{?git:0.%{git}.}2
+Version: 5.90.0
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/master/plasma-browser-integration-master.tar.bz2#/plasma-browser-integration-%{git}.tar.bz2
 %else
@@ -15,7 +15,7 @@ URL: http://kde.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(KF6Activities)
+BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6DBusAddons)
