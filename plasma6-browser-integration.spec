@@ -3,7 +3,7 @@
 #define git 20231104
 
 Name: plasma6-browser-integration
-Version: 5.91.0
+Version: 5.92.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/master/plasma-browser-integration-master.tar.bz2#/plasma-browser-integration-%{git}.tar.bz2
