@@ -13,7 +13,7 @@ Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/%{gi
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/plasma-browser-integration-%{version}.tar.xz
 %endif
 Summary: Better browser integration for the Plasma desktop
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake(ECM)
