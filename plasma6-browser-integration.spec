@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-browser-integration
-Version: 6.2.5
+Version: 6.3.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/%{gitbranch}/plasma-browser-integration-%{gitbranchd}.tar.bz2#/plasma-browser-integration-%{git}.tar.bz2
@@ -65,6 +65,7 @@ Better browser integration for the Plasma desktop.
 %{_bindir}/plasma-browser-integration-host
 %{_libdir}/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_qtdir}/plugins/kf6/kded/browserintegrationreminder.so
+%{_qtdir}/plugins/kf6/kded/browserintegrationflatpakintegrator.so
 %{_datadir}/chromium/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
 %{_datadir}/google-chrome/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
 %{_datadir}/applications/org.kde.plasma.browser_integration.host.desktop
