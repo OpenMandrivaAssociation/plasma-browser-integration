@@ -4,9 +4,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-browser-integration
+Name: plasma-browser-integration
 Version: 6.3.4
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/%{gitbranch}/plasma-browser-integration-%{gitbranchd}.tar.bz2#/plasma-browser-integration-%{git}.tar.bz2
 %else
@@ -36,25 +36,17 @@ BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: cmake(LibTaskManager) >= 5.27.80
+# Renamed after 6.0 2025-03-05
+%rename plasma6-browser-integration
+
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+BuildOption:	-DINSTALL_CHROME_MANIFEST:BOOL=ON
+BuildOption:	-DMOZILLA_DIR:PATH=%{_libdir}/mozilla
 
 %description
 Better browser integration for the Plasma desktop.
-
-%prep
-%autosetup -p1 -n plasma-browser-integration-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-DINSTALL_CHROME_MANIFEST=TRUE -DMOZILLA_DIR:PATH=%{_libdir}/mozilla \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --all-name --with-html
 
 %files -f %{name}.lang
 %{_sysconfdir}/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json
