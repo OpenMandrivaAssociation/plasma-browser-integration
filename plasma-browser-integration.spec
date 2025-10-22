@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma-browser-integration
-Version: 6.4.5
+Version: 6.5.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-browser-integration/-/archive/%{gitbranch}/plasma-browser-integration-%{gitbranchd}.tar.bz2#/plasma-browser-integration-%{git}.tar.bz2
